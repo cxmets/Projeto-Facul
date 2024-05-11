@@ -5,7 +5,7 @@
 
     $conn = new PDO($db_name, $db_user, $db_password);
     if($conn) {
-        echo "conectado";
+        echo "Teste de conexão";
     }
     function unique_id(){
         $chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
