@@ -35,7 +35,7 @@
             <button type="submit" class="btn">Registrar</button>
 
             <div class="register-link">
-                <p>Já possui uma conta? <a href="#">Login</a></p>
+                <p>Já possui uma conta? <a href="login.php">Login</a></p>
             </div>
         </form>
     </div>

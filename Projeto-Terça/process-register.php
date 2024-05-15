@@ -35,7 +35,7 @@ try {
     $stmt->execute([$_POST["name"], $_POST["email"], $password_hash]);
     echo "Registrado com sucesso!";
 
-    header("Location: login.php");
+    header("Location: register-success.php");
     exit;
 
 } catch(PDOException $e) {

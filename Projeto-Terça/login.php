@@ -1,4 +1,37 @@
-<!-- cspell:disable (extenção) -->
+<?php
+require_once __DIR__ . "/connection.php";
+
+if ($_SERVER['REQUEST_METHOD'] === "POST") {
+    $email = $_POST["email"]; 
+    $password = $_POST["password"];
+
+
+    $sql = "SELECT * FROM users WHERE email = :email";
+    $stmt = $conn->prepare($sql);
+    $stmt->bindParam(':email', $email);
+    $stmt->execute();
+
+    $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    if ($user) {
+
+        if (password_verify($password, $user['password_hash'])) {
+            session_start();
+            session_regenerate_id();
+            $_SESSION['user_id'] = $user['id'];
+
+            header("Location: index.php");
+            exit;
+        } else {
+            echo "Senha incorreta.";
+        }
+    } else {
+        echo "Usuário não encontrado.";
+    }
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,14 +46,14 @@
 <body>
     
     <div class="wrapper">
-        <form action="">
+        <form method="post">
             <h1>Login</h1>
             <div class="input-box">
-                <input type="text" placeholder="Username" required>
+                <input type="text" name="email" placeholder="Username" required>
                 <i class="bx bxs-user"></i>
             </div>
             <div class="input-box">
-                <input type="password" placeholder="Password" required>
+                <input type="password" name="password" placeholder="Password" required>
                 <i class="bx bxs-lock-alt"></i>
             </div>
 
@@ -32,7 +65,7 @@
             <button type="submit" class="btn">Login</button>
 
             <div class="register-link">
-                <p>Não possui uma conta? <a href="#">Register</a></p>
+                <p>Não possui uma conta? <a href="register.php">Register</a></p>
             </div>
         </form>
     </div>
