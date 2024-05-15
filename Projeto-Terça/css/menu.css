@@ -1,0 +1,112 @@
+* {
+margin: 0;
+padding: 0;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    gap: 16px;
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Cria 3 colunas de largura igual */
+    gap: 50px; /* Espaço entre os itens */
+    padding-top: 85rem;
+}
+
+.card{
+    background-color: #fff;
+    width: 360px;
+    height: 600px;
+    border-radius: 12px;
+    box-shadow: 4px 4px 12px #aaaa;
+    transition: transform 0.6s ease;
+}
+
+.card:hover {
+    transform: scale(1.1); /* Aplica um zoom de 10% quando o cursor passa por cima */
+}
+
+.card div {
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+gap: 4px;
+height: 30%;
+}
+
+.card img{
+    width: 300px;
+    height: 360px;
+    padding: 20px 30px 0px 30px;
+}
+
+input[type="radio"] {
+    display: none; /* Esconde os botões de rádio padrão */
+  }
+
+input[type="radio"] + label {
+    display:inline-block ;
+    padding: 10px 10px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    border: 1px solid #000000;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 10px;
+    white-space: nowrap;
+  }
+
+  #opcao1 + label{
+    background-color: #0c00b1;
+    color: #0c00b1;
+  }
+
+  #opcao2 + label{
+    background-color: black;
+    color: black;
+  }
+
+  #opcao3 + label{
+    background-color: whitesmoke;
+    color: whitesmoke;
+  }
+
+  #opcao1:checked + label{
+    border: #000000 4px solid;
+  }
+
+  #opcao2:checked + label{
+    border: #000000 4px solid;
+  }
+
+  #opcao3:checked + label{
+    border: #000000 4px solid;
+  }
+
+.card h1 {
+font-size: 2rem;
+}
+
+.card h2 {
+    font-size: .9rem;
+    color: #aaaa;
+}
+
+.card button {
+    background-color: #2192ff;
+    height: 30px;
+    border: none;
+    padding: 4px;
+    width: 80%;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+}
