@@ -1,190 +1,174 @@
 * {
   margin: 0;
   padding: 0;
-  }
-  
+}
 
+html, body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  flex: 1;
+}
 
 /* cards produtos */
-  section {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      font-family: Arial, Helvetica, sans-serif;
-      gap: 16px;
-  }
-  
-  .card-container {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr); /* Cria 4 colunas de largura igual */
-      gap: 50px; /* Espaço entre os itens */
-  }
-  
-  .card{
-      background-color: #fff;
-      width: 360px;
-      height: 600px;
-      border-radius: 12px;
-      box-shadow: 4px 4px 12px #aaaa;
-      transition: transform 0.6s ease;
-  }
-  
-  .card:hover {
-      transform: scale(1.1); /* Aplica um zoom de 10% quando o cursor passa por cima */
-  }
-  
-  .card div {
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+  gap: 16px;
+  border: 2px solid red;
+  margin-bottom: 120px; /* Ajuste este valor conforme necessário */
+}
+
+/* Grid container para os cards */
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Cria 4 colunas de largura igual */
+  gap: 50px; /* Espaço entre os itens */
+}
+
+/* Estilos dos cards */
+.card {
+  background-color: #fff;
+  width: 360px;
+  height: 600px;
+  border-radius: 12px;
+  box-shadow: 4px 4px 12px #aaaa;
+  transition: transform 0.6s ease;
+}
+
+.card:hover {
+  transform: scale(1.1); /* Aplica um zoom de 10% quando o cursor passa por cima */
+}
+
+.card div {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 4px;
   height: 30%;
-  }
-  
-  .card img{
-      width: 300px;
-      height: 360px;
-      padding: 20px 30px 0px 30px;
-  }
-  
-  input[type="radio"] {
-      display: none; /* Esconde os botões de rádio padrão */
-    }
-  
-  input[type="radio"] + label {
-      display:inline-block ;
-      padding: 10px 10px;
-      font-family: Arial, sans-serif;
-      font-size: 14px;
-      border: 1px solid #000000;
-      border-radius: 10px;
-      cursor: pointer;
-      margin: 10px;
-      white-space: nowrap;
-    }
-  
-    #opcao1 + label{
-      background-color: #0c00b1;
-      color: #0c00b1;
-    }
-  
-    #opcao2 + label{
-      background-color: black;
-      color: black;
-    }
-  
-    #opcao3 + label{
-      background-color: whitesmoke;
-      color: whitesmoke;
-    }
-  
-    #opcao1:checked + label{
-      border: #000000 4px solid;
-    }
-  
-    #opcao2:checked + label{
-      border: #000000 4px solid;
-    }
-  
-    #opcao3:checked + label{
-      border: #000000 4px solid;
-    }
-  
-  .card h1 {
+}
+
+.card img {
+  width: 300px;
+  height: 360px;
+  padding: 20px 30px 0px 30px;
+}
+
+input[type="radio"] {
+  display: none; /* Esconde os botões de rádio padrão */
+}
+
+input[type="radio"] + label {
+  display: inline-block;
+  padding: 10px 10px;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  border: 1px solid #000000;
+  border-radius: 10px;
+  cursor: pointer;
+  margin: 10px;
+  white-space: nowrap;
+}
+
+#opcao1 + label {
+  background-color: #0c00b1;
+  color: #0c00b1;
+}
+
+#opcao2 + label {
+  background-color: black;
+  color: black;
+}
+
+#opcao3 + label {
+  background-color: whitesmoke;
+  color: whitesmoke;
+}
+
+#opcao1:checked + label,
+#opcao2:checked + label,
+#opcao3:checked + label {
+  border: #000000 4px solid;
+}
+
+.card h1 {
   font-size: 2rem;
-  }
-  
-  .card h2 {
-      font-size: .9rem;
-      color: #aaaa;
-  }
-  
-  .card button {
-      background-color: #2192ff;
-      height: 30px;
-      border: none;
-      padding: 4px;
-      width: 80%;
-      color: #fff;
-      font-size: 1rem;
-      font-weight: bold;
-      cursor: pointer;
-  }
+}
 
+.card h2 {
+  font-size: .9rem;
+  color: #aaaa;
+}
 
+.card button {
+  background-color: #2192ff;
+  height: 30px;
+  border: none;
+  padding: 4px;
+  width: 80%;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
 
+/* Footer */
+.footer {
+  position: fixed;
+  bottom: -100px; /* Start off-screen */
+  width: 100%;
+  background-color: #343a40;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  transition: bottom 0.5s;
+  z-index: 1000; /* Ensure it stays above other content */
+  border: 2px solid blue;
+}
 
+.footer .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
 
+.footer .col-md-4 {
+  flex: 1;
+  padding: 10px;
+}
 
-/* footer */
+.footer h5 {
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+}
 
-  footer{
-    width: 100%;
-    height: 250px;
-    padding-bottom: 40px;
-    padding: 3rem 3.5rem;
-    background-color: #02231c;
-    color: white;
-    margin: 0px;
-    display: grid; 
-    grid-template-columns: repeat(3, 1fr);
-    font-family: 'Calibri', sans-serif;
-    letter-spacing: 1px;
-  }
-  
-  
-  #footer-information{
-    width: 90%;
-  }
-  
-  footer h2{
-    font-size: 20px;
-    font-style: italic;
-    text-align: center; 
-    color: #00fd8f;
-  }
-  
-  footer p{
-    font-size: 13px;
-    text-align: left;
-    color: #f2f2ec;
-  }
-  
-  footer h3{
-    font-size: 20px;
-    font-style: italic;
-    text-align: center;
-    color: #00fd8f;
-  }
-  
-  #footer-icons{
-    text-align: center;
-    font-size: 35px;
-    color: #f2f2ec;
-  }
-  
-  #direitos-autorais{
-    text-align: center;
-    margin-top: 14px;
-    color: #00fd8f;
-    font-size: 13px;
-  }
-  
-  #participantes{
-    text-align: center;
-    width: 50%;
-  }
-  
-  footer h4{
-    font-size: 20px;
-    font-style: italic;
-    text-align: center; 
-    color: #00fd8f;
-  }
-  
-  footer p2{
-    color: #f2f2ec;
-    font-size: 13px;
-  }
+.footer ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer ul li {
+  margin-bottom: 5px;
+}
+
+.footer a {
+  color: white;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
