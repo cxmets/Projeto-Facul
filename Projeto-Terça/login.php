@@ -30,8 +30,6 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
     }
 }
 ?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -44,7 +42,6 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
 </head>
 
 <body>
-    
     <div class="wrapper">
         <form method="post">
             <h1>Login</h1>

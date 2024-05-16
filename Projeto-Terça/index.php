@@ -20,8 +20,9 @@ if (isset($_SESSION['user_id'])) {
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Home</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/menu.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -82,6 +83,158 @@ if (isset($_SESSION['user_id'])) {
     <p><a href="login.php">Login</a> ou <a href="register.php">Registre-se</a></p>
 
 <?php endif; ?>
-      
+
+
+<!-- cards -->
+<section class="card-container">
+
+<div class="card">
+    <img src="parte de tras carta.jpg">
+    <div>
+        <form>
+            <input type="radio" id="opcao1" name="opcao" value="opcao1">
+            <label for="opcao1"></label>
+          
+            <input type="radio" id="opcao2" name="opcao" value="opcao2">
+            <label for="opcao2"></label>
+          
+            <input type="radio" id="opcao3" name="opcao" value="opcao3">
+            <label for="opcao3"></label>
+          </form>
+          
+        <h1>camisa brasil</h1>
+        <h2>Descrição</h2>
+        <span>R$ 5,50</span>
+        <button> saiba mais</button>
+
+    </div>
+</div>
+
+<div class="card">
+    <img src="Projeto-Terça/img/camisetaARG.jpg">
+    <div>
+        <h1>camisa brasil</h1>
+        <h2>Descrição</h2>
+        <span>R$ 5,50</span>
+        <button> saiba mais</button>
+
+    </div>
+</div>
+
+<div class="card">
+    <img src="Projeto-Terça/img/CamisetaBR.jpg">
+    <div>
+        <h1>camisa brasil</h1>
+        <h2>Descrição</h2>
+        <span>R$ 5,50</span>
+        <button> saiba mais</button>
+
+    </div>
+</div>
+
+<div class="card">
+    <img src="Projeto-Terça/img/camisetaV.jpg">
+    <div>
+        <h1>camisa brasil</h1>
+        <h2>Descrição</h2>
+        <span>R$ 5,50</span>
+        <button> saiba mais</button>
+
+    </div>
+</div>
+
+<div class="card">
+    <img src="Projeto-Terça/img/camisetaVERM.jpg">
+    <div>
+        <h1>camisa brasil</h1>
+        <h2>Descrição</h2>
+        <span>R$ 5,50</span>
+        <button> saiba mais</button>
+
+    </div>
+</div>
+
+<div class="card">
+    <img src="Projeto-Terça/img/chuteira1.jpg">
+    <div>
+        <h1>camisa brasil</h1>
+        <h2>Descrição</h2>
+        <span>R$ 5,50</span>
+        <button> saiba mais</button>
+
+    </div>
+</div>
+
+<div class="card">
+    <img src="chuteira2.jpg">
+    <div>
+        <h1>camisa brasil</h1>
+        <h2>Descrição</h2>
+        <span>R$ 5,50</span>
+        <button> saiba mais</button>
+
+    </div>
+</div>
+
+<div class="card">
+    <img src="chuteira3.jpg">
+    <div>
+        <h1>camisa brasil</h1>
+        <h2>Descrição</h2>
+        <span>R$ 5,50</span>
+        <button> saiba mais</button>
+
+    </div>
+</div>
+
+</section>
+
+<footer class="rodape">
+  <div id="footer-information">
+<h2>Quem somos?</h2><br><br>
+
+<p>Conheça a equipe por trás do futuro site da Herbert Sport, uma loja de esportes online em ascensão, fundada por estudantes entusiasmados do terceiro semestre do curso de Análise e Desenvolvimento de Sistemas na Universidade Nove de Julho (UNINOVE). O objetivo central é desenvolver um site que não seja apenas funcional, mas também uma experiência envolvente para os clientes da Herbert Sport, proporcionando uma jornada de compra única, combinando funcionalidade e design de forma inteligente.</p>  
+    </div>
+
+  <div id="footer-icons">
+    <h3>Formas de pagamento:</h3><br><br>
+    <id="visa">
+       <i class="fa-brands fa-cc-visa"></i>
+    </id>
+
+   <id="footer-icon-mastercard">
+     <id="mastercard">
+         <i class="fa-brands fa-cc-mastercard"></i>
+        </id>
+
+   <id="footer-icon-pix">
+     <id="pix">
+        <i class="fa-brands fa-pix"></i>
+          </id>
+
+   <id="footer-icon-paypal">
+     <id="paypal">
+        <i class="fa-brands fa-cc-paypal"></i>
+        </id> 
+     </div>
+
+     <div id="participantes">
+       <h4>Integrantes:</h4><br><br>
+
+       <p2>Caio Francisco Silva de Sena - RA: 3022200928</p2>
+     </div>
+
+     <div></div>
+
+     <div id="direitos-autorais">
+     <id="footer_copyright">
+        &#169
+        2024 todos os direitos reservados
+      </id>
+       </div>
+
+     <div></div>
+
+    </footer>
 </body>
 </html>

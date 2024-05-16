@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>janelas-itens</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/menu.css">
 </head>
 <body>
     
 <div class="card-container">
 
 <div class="card">
-    <img src="parte de tras carta.jpg">
+    <img src="img/parte de tras carta.jpg">
     <div>
         <form>
             <input type="radio" id="opcao1" name="opcao" value="opcao1">
