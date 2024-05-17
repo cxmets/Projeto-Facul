@@ -20,7 +20,7 @@ if (isset($_SESSION['user_id'])) {
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Home</title>
-    <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" href="css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
@@ -195,26 +195,44 @@ if (isset($_SESSION['user_id'])) {
   <div class="container">
     <div class="row">
       <div class="col-md-4">
-        <h5>Sobre nós</h5>
-        <p>Informações sobre a empresa.</p>
+        <h2>Sobre nós</h2>
+        <p>Conheça a equipe por trás do futuro site da Herbert Sport, uma loja de esportes online em ascensão, fundada por estudantes entusiasmados do terceiro semestre do curso de Análise e Desenvolvimento de Sistemas na Universidade Nove de Julho (UNINOVE). O objetivo central é desenvolver um site que não seja apenas funcional, mas também uma experiência envolvente para os clientes da Herbert Sport, proporcionando uma jornada de compra única, combinando funcionalidade e design de forma inteligente.</p>
       </div>
       <div class="col-md-4">
-        <h5>Contato</h5>
-        <ul>
-          <li>Email: contato@hebertsports.com</li>
-          <li>Telefone: (11) 99999-9999</li>
-        </ul>
+        <h3>Formas de Pagamento:</h3><br><br>
+        <div id="footer-icons">
+    <id="visa">
+       <i class="fa-brands fa-cc-visa"></i>
+    </id>
+
+   <id="footer-icon-mastercard">
+     <id="mastercard">
+         <i class="fa-brands fa-cc-mastercard"></i>
+        </id>
+
+   <id="footer-icon-pix">
+     <id="pix">
+        <i class="fa-brands fa-pix"></i>
+          </id>
+
+   <id="footer-icon-paypal">
+     <id="paypal">
+        <i class="fa-brands fa-cc-paypal"></i>
+        </id> 
+     </div>
       </div>
-      <div class="col-md-4">
-        <h5>Redes Sociais</h5>
-        <ul>
-          <li><a href="#">Instagram</a></li>
-          <li><a href="#">Facebook</a></li>
-          <li><a href="#">Twitter</a></li>
-        </ul>
+      <div class="col-md-4" id="participantes">
+        <h4>Integrantes</h4>
+        <p2>Caio Francisco Silva de Sena - RA: 3022200928<br>Gabriel Cordeiros Ramos - RA: 3023101243<br>Filipe Augusto de Carvalho - RA: 923111862<br>Felipe Nerys Martins - RA: 3023101824<br>Emerson Campos Pacheco - RA: 3023104721<br>Matheus Duarte Luiz -RA:3023105788<br>Leandro Valdoski - RA: 3023105606<br>Guilherme Alves do nascimento - RA: 3023101021<br>Nickolas Palaro Vendrame - RA: 3023102885<br>Richard Gomes de Oliveira - RA: 3023101002</p2>
       </div>
     </div>
   </div>
+  <div class="direitos-autorais">
+     <id="footer_copyright">
+        &#169
+        2024 todos os direitos reservados
+      </id>
+       </div>
 </footer>
 
 
