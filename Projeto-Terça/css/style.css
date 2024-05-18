@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
 * {
   margin: 0;
   padding: 0;
@@ -16,6 +18,82 @@ body {
   flex: 1;
 }
 
+.offcanvas-body i {
+  text-decoration: none;
+  display: flex;
+  padding: 5px 0 0 0;
+  font-size: 28px;
+  margin-left: 50px;
+  margin-right: 20px;
+  text-shadow: 0 0 2px white;
+}
+
+
+.offcanvas-body i:hover {
+  color: #65edff;
+  transform: scale(1.2);
+  cursor: pointer;
+  text-shadow: 0 0 1px #65edff;
+}
+
+.cart-count:hover {
+  color: #6ee9ff;
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+/* contador cart */
+.cart-icon-container {
+  position: relative;
+  display: inline-block;
+}
+
+.cart-icon {
+  color: white;
+  text-decoration: none;
+  position: relative;
+  display: inline-block;
+  font-size: 24px;
+}
+
+.cart-count {
+  position: absolute;
+  top: -5px;
+  right: 10px;
+  display: none;
+  color: white;
+  border-radius: 50%;
+  font-size: 14px;
+  text-align: center;
+  line-height: 20px;
+  height: 20px;
+  width: 20px;
+  text-shadow: 0 0 2px white;
+  font-family: "Poppins Bold" sans-serif;
+  border: 2px;
+}
+
+.cart-count-animation {
+  animation-name: pulse;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+}
+
+
+@keyframes pulse {
+  0% {
+      transform: scale(1);
+  }
+  50% {
+      transform: scale(1.2);
+  }
+  100% {
+      transform: scale(1);
+  }
+}
+
+
+
 /* cards produtos */
 section {
   display: flex;
@@ -23,28 +101,28 @@ section {
   align-items: center;
   font-family: Arial, Helvetica, sans-serif;
   gap: 16px;
-  padding-bottom: 100px;
 }
 
 /* Grid container para os cards */
 .card-container {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* Cria 4 colunas de largura igual */
-  gap: 50px; /* Espaço entre os itens */
+  justify-content: center;
+  gap: 60px;
+  grid-template-columns: repeat(4, 1fr);
+  padding: 0 30px 100px 30px;
 }
 
 /* Estilos dos cards */
 .card {
   background-color: #fff;
-  width: 360px;
-  height: 600px;
   border-radius: 12px;
   box-shadow: 4px 4px 12px #aaaa;
   transition: transform 0.6s ease;
+  width: 100%;
 }
 
 .card:hover {
-  transform: scale(1.1); /* Aplica um zoom de 10% quando o cursor passa por cima */
+  transform: scale(1.1);
 }
 
 .card div {
@@ -57,13 +135,20 @@ section {
 }
 
 .card img {
-  width: 300px;
-  height: 360px;
-  padding: 20px 30px 0px 30px;
+  width: 100%;
+  height: auto;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.card span {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 10px;
 }
 
 input[type="radio"] {
-  display: none; /* Esconde os botões de rádio padrão */
+  display: none;
 }
 
 input[type="radio"] + label {
@@ -93,12 +178,6 @@ input[type="radio"] + label {
   color: whitesmoke;
 }
 
-#opcao1:checked + label,
-#opcao2:checked + label,
-#opcao3:checked + label {
-  border: #000000 4px solid;
-}
-
 .card h1 {
   font-size: 2rem;
 }
@@ -110,26 +189,31 @@ input[type="radio"] + label {
 
 .card button {
   background-color: #2192ff;
-  height: 30px;
   border: none;
-  padding: 4px;
-  width: 80%;
+  border-radius: 15px;
+  padding: 10px 20px; /* Aumenta o espaço interno do botão */
+  margin-bottom: 20px;
   color: #fff;
   font-size: 1rem;
   font-weight: bold;
   cursor: pointer;
+  transition: background-color 0.3s ease; /* Adiciona transição suave na cor de fundo */
 }
 
-/* Footer */
+.card button:hover {
+  background-color: #1a74cc; /* Cor de fundo ao passar o mouse */
+}
+
+
 .footer {
-  bottom: -100px; /* Start off-screen */
+  bottom: -100px;
   width: 100%;
   background-color: #02231c;
   color: white;
   text-align: center;
   padding: 20px 0 0 0;
   transition: bottom 0.5s;
-  z-index: 1000; /* Ensure it stays above other content */
+  z-index: 1000;
   font-family: 'Calibri', sans-serif;
   letter-spacing: 1px;
 }
@@ -157,8 +241,17 @@ input[type="radio"] + label {
 
 #footer-icons{
   text-align: center;
-  font-size: 35px;
+  justify-content: center;
+  font-size: 40px;
   color: #f2f2ec;
+}
+
+#footer-icons i {
+  margin-right: 15px;
+}
+
+#footer-icons i:last-child {
+  margin-right: 0; /* Remove a margem direita do último ícone */
 }
 
 .footer h2{

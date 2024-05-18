@@ -12,18 +12,25 @@ if (isset($_SESSION['user_id'])) {
     $stmt->execute();
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
 }
+
+require_once 'connection.php';
+
+$sql = "SELECT * FROM products WHERE status = 'active'";
+$stmt = $conn->prepare($sql);
+$stmt->execute();
+$products = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Home</title>
     <link rel="stylesheet" href="css/style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script defer src="script.js"></script>
 </head>
 <body>
@@ -55,19 +62,13 @@ if (isset($_SESSION['user_id'])) {
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="#">Favoritos</a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Contato
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Instagram</a></li>
-                            <li><a class="dropdown-item" href="#">Facebook</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#">Suporte</a></li>
-                        </ul>
-                    </li>
+
+                    <div class="cart-icon-container">
+                        <a href="cart.php" aria-current="page" class="cart-icon">
+                        <i class='bx bx-shopping-bag'></i>
+                        <span class="cart-count">0</span></a>
+                    </div>
+
                 </ul>
             </div>
         </div>
@@ -75,119 +76,29 @@ if (isset($_SESSION['user_id'])) {
 </nav>
 
 <?php if (isset($_SESSION["user_id"])): ?>
-
     <p>Bem vindo <?= htmlspecialchars($user["name"]) ?></p>
     <p><a href="logout.php">Log out</a></p>
-
 <?php else: ?>
-
     <p><a href="login.php">Login</a> ou <a href="register.php">Registre-se</a></p>
-
 <?php endif; ?>
-
 
 <!-- cards -->
 <section class="card-container">
-
-<div class="card">
-    <img src="parte de tras carta.jpg">
-    <div>
-        <form>
-            <input type="radio" id="opcao1" name="opcao" value="opcao1">
-            <label for="opcao1"></label>
-          
-            <input type="radio" id="opcao2" name="opcao" value="opcao2">
-            <label for="opcao2"></label>
-          
-            <input type="radio" id="opcao3" name="opcao" value="opcao3">
-            <label for="opcao3"></label>
-          </form>
-          
-        <h1>camisa brasil</h1>
-        <h2>Descrição</h2>
-        <span>R$ 5,50</span>
-        <button> saiba mais</button>
-
-    </div>
-</div>
-
-<div class="card">
-    <img src="Projeto-Terça/img/camisetaARG.jpg">
-    <div>
-        <h1>camisa brasil</h1>
-        <h2>Descrição</h2>
-        <span>R$ 5,50</span>
-        <button> saiba mais</button>
-
-    </div>
-</div>
-
-<div class="card">
-    <img src="Projeto-Terça/img/CamisetaBR.jpg">
-    <div>
-        <h1>camisa brasil</h1>
-        <h2>Descrição</h2>
-        <span>R$ 5,50</span>
-        <button> saiba mais</button>
-
-    </div>
-</div>
-
-<div class="card">
-    <img src="Projeto-Terça/img/camisetaV.jpg">
-    <div>
-        <h1>camisa brasil</h1>
-        <h2>Descrição</h2>
-        <span>R$ 5,50</span>
-        <button> saiba mais</button>
-
-    </div>
-</div>
-
-<div class="card">
-    <img src="Projeto-Terça/img/camisetaVERM.jpg">
-    <div>
-        <h1>camisa brasil</h1>
-        <h2>Descrição</h2>
-        <span>R$ 5,50</span>
-        <button> saiba mais</button>
-
-    </div>
-</div>
-
-<div class="card">
-    <img src="Projeto-Terça/img/chuteira1.jpg">
-    <div>
-        <h1>camisa brasil</h1>
-        <h2>Descrição</h2>
-        <span>R$ 5,50</span>
-        <button> saiba mais</button>
-
-    </div>
-</div>
-
-<div class="card">
-    <img src="chuteira2.jpg">
-    <div>
-        <h1>camisa brasil</h1>
-        <h2>Descrição</h2>
-        <span>R$ 5,50</span>
-        <button> saiba mais</button>
-
-    </div>
-</div>
-
-<div class="card">
-    <img src="chuteira3.jpg">
-    <div>
-        <h1>camisa brasil</h1>
-        <h2>Descrição</h2>
-        <span>R$ 5,50</span>
-        <button> saiba mais</button>
-
-    </div>
-</div>
-
+<?php if (empty($products)): ?>
+    <p>Nenhum produto encontrado.</p>
+<?php else: ?>
+    <?php foreach ($products as $product): ?>
+        <div class="card">
+            <img src="<?= htmlspecialchars($product['image']) ?>" alt="<?= htmlspecialchars($product['name']) ?>">
+            <div>
+                <h1><?= htmlspecialchars($product['name']) ?></h1>
+                <h2><?= htmlspecialchars($product['product_detail']) ?></h2>
+                <span>R$ <?= number_format($product['price'], 2, ',', '.') ?></span>
+                <button class="add-to-cart-btn" data-product-id="<?= $product['id'] ?>">Adicionar ao carrinho</button>
+            </div>
+        </div>
+    <?php endforeach; ?>
+<?php endif; ?>
 </section>
 
 <!-- Footer -->
@@ -201,29 +112,15 @@ if (isset($_SESSION['user_id'])) {
       <div class="col-md-4">
         <h3>Formas de Pagamento:</h3><br><br>
         <div id="footer-icons">
-    <id="visa">
-       <i class="fa-brands fa-cc-visa"></i>
-    </id>
-
-   <id="footer-icon-mastercard">
-     <id="mastercard">
-         <i class="fa-brands fa-cc-mastercard"></i>
-        </id>
-
-   <id="footer-icon-pix">
-     <id="pix">
-        <i class="fa-brands fa-pix"></i>
-          </id>
-
-   <id="footer-icon-paypal">
-     <id="paypal">
-        <i class="fa-brands fa-cc-paypal"></i>
-        </id> 
-     </div>
+          <i class="fa-brands fa-cc-visa"></i>
+          <i class="fa-brands fa-cc-mastercard"></i>
+          <i class="fa-brands fa-cc-paypal"></i>
+          <i class="fa-brands fa-pix"></i>
+        </div>
       </div>
       <div class="col-md-4" id="participantes">
         <h4>Integrantes</h4>
-        <p2>Caio Francisco Silva de Sena - RA: 3022200928<br>Gabriel Cordeiros Ramos - RA: 3023101243<br>Filipe Augusto de Carvalho - RA: 923111862<br>Felipe Nerys Martins - RA: 3023101824<br>Emerson Campos Pacheco - RA: 3023104721<br>Matheus Duarte Luiz -RA:3023105788<br>Leandro Valdoski - RA: 3023105606<br>Guilherme Alves do nascimento - RA: 3023101021<br>Nickolas Palaro Vendrame - RA: 3023102885<br>Richard Gomes de Oliveira - RA: 3023101002</p2>
+        <p>Caio Francisco Silva de Sena - RA: 3022200928<br>Gabriel Cordeiros Ramos - RA: 3023101243<br>Filipe Augusto de Carvalho - RA: 923111862<br>Felipe Nerys Martins - RA: 3023101824<br>Emerson Campos Pacheco - RA: 3023104721<br>Matheus Duarte Luiz - RA:3023105788<br>Leandro Valdoski - RA: 3023102868<br>Luiz Gustavo Bernardo Da Silva - RA:3023107794</p>
       </div>
     </div>
   </div>
@@ -232,9 +129,8 @@ if (isset($_SESSION['user_id'])) {
         &#169
         2024 todos os direitos reservados
       </id>
-       </div>
+  </div>
 </footer>
-
 
 </body>
 </html>
