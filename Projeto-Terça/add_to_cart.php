@@ -1,8 +1,9 @@
 <?php
 session_start();
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['product_id'])) {
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['product_id'], $_POST['quantity'])) {
     $productId = $_POST['product_id'];
+    $quantity = max(1, (int)$_POST['quantity']); // Garantir que a quantidade seja pelo menos 1
 
     require_once 'connection.php';
 
@@ -20,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['product_id'])) {
         $found = false;
         foreach ($_SESSION['cart'] as &$item) {
             if ($item['id'] == $productId) {
-                $item['quantity'] += 1;
+                $item['quantity'] += $quantity;
                 $found = true;
                 break;
             }
@@ -31,7 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['product_id'])) {
                 'id' => $product['id'],
                 'name' => $product['name'],
                 'price' => $product['price'],
-                'quantity' => 1
+                'quantity' => $quantity
             ];
             $_SESSION['cart'][] = $cartItem;
         }
@@ -47,4 +48,3 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['product_id'])) {
 } else {
     echo json_encode(['error' => 'Requisição inválida!']);
 }
-?>

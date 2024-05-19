@@ -125,7 +125,7 @@ section {
   transform: scale(1.1);
 }
 
-.card div {
+.card-content {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -147,37 +147,6 @@ section {
   margin-bottom: 10px;
 }
 
-input[type="radio"] {
-  display: none;
-}
-
-input[type="radio"] + label {
-  display: inline-block;
-  padding: 10px 10px;
-  font-family: Arial, sans-serif;
-  font-size: 14px;
-  border: 1px solid #000000;
-  border-radius: 10px;
-  cursor: pointer;
-  margin: 10px;
-  white-space: nowrap;
-}
-
-#opcao1 + label {
-  background-color: #0c00b1;
-  color: #0c00b1;
-}
-
-#opcao2 + label {
-  background-color: black;
-  color: black;
-}
-
-#opcao3 + label {
-  background-color: whitesmoke;
-  color: whitesmoke;
-}
-
 .card h1 {
   font-size: 2rem;
 }
@@ -187,12 +156,38 @@ input[type="radio"] + label {
   color: #aaaa;
 }
 
+.quantity-and-cart {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  gap: 10px;
+  width: 100%;
+}
+
+.add-to-cart-btn {
+  margin-right: 40px;
+}
+
+.quantity-input {
+  width: 40px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 5px;
+  text-align: center;
+}
+
+::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
 .card button {
+  display: flex;
+  justify-content: center;
   background-color: #2192ff;
   border: none;
   border-radius: 15px;
-  padding: 10px 20px; /* Aumenta o espaço interno do botão */
-  margin-bottom: 20px;
+  padding: 8px 10px; /* Aumenta o espaço interno do botão */
   color: #fff;
   font-size: 1rem;
   font-weight: bold;
@@ -203,7 +198,6 @@ input[type="radio"] + label {
 .card button:hover {
   background-color: #1a74cc; /* Cor de fundo ao passar o mouse */
 }
-
 
 .footer {
   bottom: -100px;

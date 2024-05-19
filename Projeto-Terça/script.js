@@ -41,8 +41,12 @@ document.addEventListener('DOMContentLoaded', async function() {
             event.preventDefault();
 
             const productId = this.getAttribute('data-product-id');
+            const quantityInput = document.querySelector(`#quantity-${productId}`);
+            const quantity = quantityInput ? quantityInput.value : 1;
+
             const formData = new FormData();
             formData.append('product_id', productId);
+            formData.append('quantity', quantity);
 
             try {
                 const response = await fetch('add_to_cart.php', {
@@ -60,7 +64,7 @@ document.addEventListener('DOMContentLoaded', async function() {
                             cartIcon.classList.remove('cart-icon-animation');
                         }, 500);
                     }
-                    // msg de confirmação de que foi para o carrinho - depoiss.
+                    // msg de confirmação de que foi para o carrinho - depois.
                 } else {
                     throw new Error('Erro ao adicionar produto ao carrinho.');
                 }

@@ -90,16 +90,20 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <?php foreach ($products as $product): ?>
         <div class="card">
             <img src="<?= htmlspecialchars($product['image']) ?>" alt="<?= htmlspecialchars($product['name']) ?>">
-            <div>
+            <div class="card-content">
                 <h1><?= htmlspecialchars($product['name']) ?></h1>
                 <h2><?= htmlspecialchars($product['product_detail']) ?></h2>
                 <span>R$ <?= number_format($product['price'], 2, ',', '.') ?></span>
-                <button class="add-to-cart-btn" data-product-id="<?= $product['id'] ?>">Adicionar ao carrinho</button>
+                <div class="quantity-and-cart">
+                    <input type="number" id="quantity-<?= $product['id'] ?>" name="quantity" min="1" placeholder="1" class="quantity-input">
+                    <button class="add-to-cart-btn" id="btn-qnt" data-product-id="<?= $product['id'] ?>">Adicionar ao carrinho</button>
+                </div>
             </div>
         </div>
     <?php endforeach; ?>
 <?php endif; ?>
 </section>
+
 
 <!-- Footer -->
 <footer class="footer">
