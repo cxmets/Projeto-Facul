@@ -18,7 +18,41 @@ body {
   flex: 1;
 }
 
-.offcanvas-body i {
+nav {
+  background-color: #02231c;
+}
+
+.logo {
+  display: flex;
+  padding: 0 0 0 50px;
+  height: 80px;
+}
+.offcanvas-body {
+  width: 100%;
+  font-size: 20px;
+  gap: 30px;
+}
+
+.search {
+  display: flex;
+  justify-content: center;
+  margin-right: 200px;
+  margin-left: 200px;
+  width: 100%;
+}
+
+.form-control:hover {
+  box-shadow: 0px 0 5px #00e1ff;
+}
+
+.nav-item:hover {
+  color: #65edff;
+  transform: scale(1.1);
+  cursor: pointer;
+  text-shadow: 0 0 2px #65edff;
+}
+
+.offcanvas-body #cart {
   text-decoration: none;
   display: flex;
   padding: 5px 0 0 0;
@@ -29,23 +63,29 @@ body {
 }
 
 
-.offcanvas-body i:hover {
-  color: #65edff;
+.offcanvas-body #cart:hover {
+  color: #00fd8f;
   transform: scale(1.2);
   cursor: pointer;
-  text-shadow: 0 0 1px #65edff;
+  text-shadow: 0 0 3px #00fd8f;
+}
+
+.offcanvas-body #lupa {
+  display: flex;
+  font-size: 30px;
 }
 
 .cart-count:hover {
-  color: #6ee9ff;
+  color: #00fd8f;
   transform: scale(1.2);
   cursor: pointer;
 }
 
 /* contador cart */
 .cart-icon-container {
+  padding-top: 2.5px;
   position: relative;
-  display: inline-block;
+  display: flex;
 }
 
 .cart-icon {
@@ -59,18 +99,14 @@ body {
 .cart-count {
   position: absolute;
   top: -5px;
-  right: 10px;
+  right: 8.5px;
   display: none;
   color: white;
   border-radius: 50%;
   font-size: 14px;
   text-align: center;
-  line-height: 20px;
-  height: 20px;
-  width: 20px;
   text-shadow: 0 0 2px white;
   font-family: "Poppins Bold" sans-serif;
-  border: 2px;
 }
 
 .cart-count-animation {
@@ -184,7 +220,7 @@ section {
 .card button {
   display: flex;
   justify-content: center;
-  background-color: #2192ff;
+  background-color: #043b2f;
   border: none;
   border-radius: 15px;
   padding: 8px 10px; /* Aumenta o espaço interno do botão */
@@ -196,7 +232,9 @@ section {
 }
 
 .card button:hover {
-  background-color: #1a74cc; /* Cor de fundo ao passar o mouse */
+  background-color: #02231c; /* Cor de fundo ao passar o mouse */
+  color: #00fd8f;
+  box-shadow: 0 0 10px #00fd8f;
 }
 
 .footer {

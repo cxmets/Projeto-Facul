@@ -27,10 +27,10 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Home</title>
-    <link rel="stylesheet" href="css/style.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/style.css">
     <script defer src="script.js"></script>
 </head>
 <body>
@@ -38,7 +38,7 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <!-- Bootstrap -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Offcanvas navbar large">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">Hebert Sports</a>
+        <a class="logo" href="#"><img src="img/Logo-HS.png"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar2" aria-controls="offcanvasNavbar2" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -47,12 +47,14 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 <h5 class="offcanvas-title" id="offcanvasNavbar2Label">Offcanvas</h5>
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
-            <div class="offcanvas-body">
-                <form class="d-flex mt-3 mt-lg-0" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
                 <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+
+                <div class="offcanvas-body">
+                <form class="search" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Busque pelo seu produto!" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit"><i class='bx bx-search-alt-2' id="lupa"></i></button>
+                </form>
+                
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="#">Home</a>
                     </li>
@@ -65,10 +67,9 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
                     <div class="cart-icon-container">
                         <a href="cart.php" aria-current="page" class="cart-icon">
-                        <i class='bx bx-shopping-bag'></i>
+                        <i class='bx bx-shopping-bag' id="cart"></i>
                         <span class="cart-count">0</span></a>
                     </div>
-
                 </ul>
             </div>
         </div>
