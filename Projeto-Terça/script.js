@@ -15,9 +15,6 @@ document.addEventListener('scroll', function() {
 });
 document.querySelector('.footer').style.transition = 'opacity 0.7s ease';
 
-
-
-
 // Carrinho
 document.addEventListener('DOMContentLoaded', async function() {
     const cartIcon = document.querySelector('.cart-icon');
@@ -79,3 +76,90 @@ document.addEventListener('DOMContentLoaded', async function() {
         });
     });
 });
+
+
+// Favoritos 
+document.addEventListener('DOMContentLoaded', () => {
+    const favoritesLink = document.getElementById('favorites-link');
+    const allCards = document.querySelectorAll('.card');
+    const noFavoritesMessage = document.getElementById('no-favorites-message');
+
+    // Carregar o estado inicial dos favoritos
+    document.querySelectorAll('.star-icon').forEach(star => {
+        const productId = star.dataset.productId;
+        fetch(`is_favorite.php?product_id=${productId}`)
+            .then(response => response.text())
+            .then(isFavorite => {
+                if (isFavorite === 'yes') {
+                    star.classList.remove('bx-star');
+                    star.classList.add('bxs-star');
+                }
+            });
+    });
+
+    // Adicionar ou remover dos favoritos ao clicar na estrela
+    document.querySelectorAll('.star-icon').forEach(star => {
+        star.addEventListener('click', function() {
+            const productId = this.dataset.productId;
+            const price = this.dataset.price;
+
+            fetch('toggle_favorite.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                },
+                body: `product_id=${productId}&price=${price}`
+            })
+            .then(response => response.text())
+            .then(data => {
+                if (data === 'added') {
+                    this.classList.remove('bx-star');
+                    this.classList.add('bxs-star');
+                } else if (data === 'removed') {
+                    this.classList.remove('bxs-star');
+                    this.classList.add('bx-star');
+                }
+            })
+            .catch(error => console.error('Error:', error));
+        });
+    });
+
+    // Filtrar e mostrar apenas os favoritos ao clicar no link de favoritos
+    favoritesLink.addEventListener('click', function(e) {
+        e.preventDefault();
+        fetch(`get_favorites.php`)
+            .then(response => response.json())
+            .then(favorites => {
+                if (favorites.length === 0) {
+                    noFavoritesMessage.style.display = 'block';
+                } else {
+                    noFavoritesMessage.style.display = 'none';
+                }
+                allCards.forEach(card => {
+                    const productId = card.dataset.productId;
+                    if (favorites.includes(productId)) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+    });
+});
+
+
+// Carrossel
+let count = 1;
+document.getElementById("radio1").checked = true;
+
+setInterval( function (){
+    nextImage();
+},4000) 
+
+function nextImage(){
+    count++;
+    if(count>4){
+        count = 1;
+    }
+    document.getElementById("radio"+count).checked = true;
+}
