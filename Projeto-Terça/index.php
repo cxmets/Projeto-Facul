@@ -65,6 +65,9 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         <?php endif; ?>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="admin_products.php">Administração</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="index.php">Home</a>
                     </li>
                     <li class="nav-item">
@@ -134,7 +137,6 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <!--- manual navihgationn FIM-->
     </div>
 </div>
-
 
 
 <!-- cards -->

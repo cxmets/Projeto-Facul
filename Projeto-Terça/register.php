@@ -1,4 +1,3 @@
-<!-- cspell:disable (extenção) -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,36 +8,31 @@
     <link rel="stylesheet" href="css/login.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
-
 <body>
-    
     <div class="wrapper">
         <form action="process-register.php" method="post">
             <h1>Registrar-se</h1>
             <div class="input-box">
-                <input type="text" id="username" name="name" placeholder="Username">
-                <i class="bx bxs-user" required title="Digite seu nome de usuário"></i>
+                <input type="text" id="username" name="name" placeholder="Username" required>
+                <i class="bx bxs-user" title="Digite seu nome de usuário"></i>
             </div>
             <div class="input-box">
-                <input type="email" id="email" name="email" placeholder="Email">
-                <i class='bx bxs-envelope' required title="Digite seu endereço de e-mail"></i>
+                <input type="email" id="email" name="email" placeholder="Email" required>
+                <i class='bx bxs-envelope' title="Digite seu endereço de e-mail"></i>
             </div>
             <div class="input-box">
-                <input type="password" id="password" name="password" placeholder="Password">
-                <i class="bx bxs-lock-alt" required title="Digite sua senha"></i>
+                <input type="password" id="password" name="password" placeholder="Password" required>
+                <i class="bx bxs-lock-alt" title="Digite sua senha"></i>
             </div>
             <div class="input-box">
-                <input type="password" id="password_confirmation" name="password_confirmation" placeholder="Password Confirmation">
-                <i class='bx bx-refresh' required title="Confirme sua senha"></i>
+                <input type="password" id="password_confirmation" name="password_confirmation" placeholder="Password Confirmation" required>
+                <i class='bx bx-refresh' title="Confirme sua senha"></i>
             </div>
-
             <button type="submit" class="btn">Registrar</button>
-
             <div class="register-link">
                 <p>Já possui uma conta? <a href="login.php">Login</a></p>
             </div>
         </form>
     </div>
-
 </body>
 </html>

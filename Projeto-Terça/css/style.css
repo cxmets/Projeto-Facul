@@ -345,15 +345,15 @@ section {
 
 .quantity-and-cart #star-0 {
   color: yellow;
-  margin-right: 10px;
+  margin: 10px 10px 0 0;
   font-size: 30px;
-  text-shadow: black 1px 0 3px;
+  text-shadow: #000 0 0 6px;
 }
 
 .quantity-and-cart #star-0:hover {
   color: rgb(255, 255, 0);
   transform: scale(1.1);
-  text-shadow: rgb(70, 69, 69) 1px 0 6px;
+  text-shadow: #000 0 0 11px;
 }
 
 .add-to-cart-btn {

@@ -78,7 +78,9 @@ document.addEventListener('DOMContentLoaded', async function() {
 });
 
 
-// Favoritos 
+
+
+// Favoritos - ALL
 document.addEventListener('DOMContentLoaded', () => {
     const favoritesLink = document.getElementById('favorites-link');
     const allCards = document.querySelectorAll('.card');
@@ -92,7 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
             .then(isFavorite => {
                 if (isFavorite === 'yes') {
                     star.classList.remove('bx-star');
-                    star.classList.add('bxs-star');
+                    star.classList.add('bxs-star',  'bx-spin');
                 }
             });
     });
@@ -114,9 +116,9 @@ document.addEventListener('DOMContentLoaded', () => {
             .then(data => {
                 if (data === 'added') {
                     this.classList.remove('bx-star');
-                    this.classList.add('bxs-star');
+                    this.classList.add('bxs-star',  'bx-spin');
                 } else if (data === 'removed') {
-                    this.classList.remove('bxs-star');
+                    this.classList.remove('bxs-star',  'bx-spin');
                     this.classList.add('bx-star');
                 }
             })
